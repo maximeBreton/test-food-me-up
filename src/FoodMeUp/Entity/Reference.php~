@@ -1,0 +1,116 @@
+<?php
+
+namespace FoodMeUp\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="reference")
+ */
+class Reference
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="integer", length=10, nullable=true)
+     */
+    private $cSource;
+
+    /**
+     * @ORM\Column(type="integer", length=6, nullable=true)
+     */
+    private $origrefcd;
+
+    /**
+     * @ORM\Column(type="string", length=250, nullable=true)
+     */
+    private $citation;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set cSource
+     *
+     * @param integer $cSource
+     *
+     * @return Reference
+     */
+    public function setCSource($cSource)
+    {
+        $this->cSource = $cSource;
+
+        return $this;
+    }
+
+    /**
+     * Get cSource
+     *
+     * @return integer
+     */
+    public function getCSource()
+    {
+        return $this->cSource;
+    }
+
+    /**
+     * Set origrefcd
+     *
+     * @param integer $origrefcd
+     *
+     * @return Reference
+     */
+    public function setOrigrefcd($origrefcd)
+    {
+        $this->origrefcd = $origrefcd;
+
+        return $this;
+    }
+
+    /**
+     * Get origrefcd
+     *
+     * @return integer
+     */
+    public function getOrigrefcd()
+    {
+        return $this->origrefcd;
+    }
+
+    /**
+     * Set citation
+     *
+     * @param string $citation
+     *
+     * @return Reference
+     */
+    public function setCitation($citation)
+    {
+        $this->citation = $citation;
+
+        return $this;
+    }
+
+    /**
+     * Get citation
+     *
+     * @return string
+     */
+    public function getCitation()
+    {
+        return $this->citation;
+    }
+}

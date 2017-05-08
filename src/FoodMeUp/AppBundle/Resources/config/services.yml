@@ -1,0 +1,7 @@
+parameters:
+    import_ciqual.class: FoodMeUp\AppBundle\Services\ImportCiqual
+
+services:
+    foodmeup.import_ciqual:
+        class: "%import_ciqual.class%"
+        arguments: ["@doctrine.orm.entity_manager", "@monolog.logger", "@event_dispatcher"]
